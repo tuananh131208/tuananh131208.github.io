@@ -1,0 +1,53 @@
+/* --- Vietnamese-friendly tweaks for HTML5 UP Dimension --- */
+
+/* 1) Làm mượt hiển thị chữ có dấu, dùng stack font hỗ trợ tiếng Việt */
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+body, input, select, textarea {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+               "Noto Sans", "Noto Sans Vietnamese", "Helvetica Neue",
+               Arial, "Apple Color Emoji", "Segoe UI Emoji", "Noto Color Emoji",
+               sans-serif;
+  letter-spacing: 0.01em;       /* bớt giãn để dấu không bị “rời” */
+}
+
+/* 2) Tiêu đề to/uppercase: siết letter-spacing để chữ Việt cân hơn */
+h1, h2, h3, .major {
+  letter-spacing: 0.02em;
+}
+/* Tiêu đề chính trên màn hình đầu */
+#header .content .inner h1 {
+  letter-spacing: 0.05em;       /* nhỏ hơn mặc định của theme */
+  /* Nếu muốn bỏ ALL CAPS, bỏ comment dòng dưới:
+  text-transform: none;
+  */
+}
+
+/* 3) Đoạn văn đọc dễ hơn */
+p { line-height: 1.75; }
+
+/* 4) NAV: cho phép nhãn dài tự xuống dòng + canh giữa */
+#header nav ul li a{
+  white-space: normal;          /* bỏ nowrap mặc định */
+  overflow-wrap: anywhere;      /* phòng trường hợp không có khoảng trắng */
+  text-align: center;
+  line-height: 1.3;
+  padding-top: 0.9rem;
+  padding-bottom: 0.9rem;
+}
+/* Thu hẹp tối thiểu mỗi nút để chữ Việt không bị “chồm” ra ngoài */
+#header nav ul li { min-width: 9rem; }
+
+/* 5) Responsive: chữ menu nhỏ lại chút trên màn hình hẹp */
+@media (max-width: 980px){
+  #header nav ul li a{ font-size: 0.95rem; }
+}
+@media (max-width: 736px){
+  #header nav ul li a{ font-size: 0.9rem; }
+}
+
+/* 6) Footer: chữ gọn gàng, underline dễ nhìn */
+#footer { letter-spacing: 0.02em; }
+#footer a { text-decoration: underline; text-underline-offset: 2px; }
